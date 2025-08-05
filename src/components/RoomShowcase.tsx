@@ -315,6 +315,7 @@ export const RoomShowcase = () => {
           </div>
         </div>
       </section>
+
       {openRoom && (
         <Dialog open={!!openRoom} onOpenChange={(v) => !v && setOpenRoom(null)}>
           <DialogContent className="max-w-5xl p-0 overflow-hidden rounded-2xl shadow-2xl bg-background">
@@ -322,21 +323,21 @@ export const RoomShowcase = () => {
               <DialogTitle className="text-2xl font-playfair text-primary">
                 {openRoom.title}
               </DialogTitle>
-
-              {/* Single close button */}
               <DialogClose asChild>
+
               </DialogClose>
             </DialogHeader>
             <div className="p-6 pt-0">
               <div className="mb-6">
-                <Carousel className="w-full h-72" loop>
+                {/* Increased height from h-72 to h-96 */}
+                <Carousel className="w-full h-124" loop>
                   <CarouselContent>
                     {openRoom.images.map((img, idx) => (
                       <CarouselItem key={idx} value={idx}>
                         <img
                           src={img}
                           alt={`${openRoom.title} – slide ${idx + 1}`}
-                          className="w-full h-72 object-cover rounded-xl"
+                          className="w-full h-124 object-cover rounded-xl"
                         />
                       </CarouselItem>
                     ))}
