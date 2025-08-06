@@ -1,0 +1,244 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Core semantic tokens */
+    --background: 0 0% 100%;
+    --foreground: 220 13% 9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 13% 9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 13% 9%;
+
+    --primary: 200 100% 35%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 13% 96%;
+    --secondary-foreground: 220 13% 9%;
+
+    --muted: 220 13% 96%;
+    --muted-foreground: 220 9% 46%;
+
+    --accent: 350 89% 60%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 200 100% 35%;
+
+    --radius: 16px;
+
+    /* Mykonos Paradise Color Palette */
+    --aegean-50: 200 100% 97%;
+    --aegean-100: 200 85% 92%;
+    --aegean-200: 200 70% 84%;
+    --aegean-300: 200 65% 72%;
+    --aegean-400: 200 70% 58%;
+    --aegean-500: 200 100% 45%;
+    --aegean-600: 200 100% 35%;
+    --aegean-700: 200 85% 28%;
+    --aegean-800: 200 70% 22%;
+    --aegean-900: 200 55% 16%;
+
+    --bougainvillea-50: 350 100% 97%;
+    --bougainvillea-100: 350 85% 92%;
+    --bougainvillea-200: 350 80% 85%;
+    --bougainvillea-300: 350 75% 75%;
+    --bougainvillea-400: 350 75% 65%;
+    --bougainvillea-500: 350 70% 55%;
+    --bougainvillea-600: 350 65% 45%;
+    --bougainvillea-700: 350 60% 38%;
+    --bougainvillea-800: 350 55% 30%;
+    --bougainvillea-900: 350 45% 22%;
+
+    --sunset-50: 40 100% 97%;
+    --sunset-100: 40 95% 90%;
+    --sunset-200: 40 90% 82%;
+    --sunset-300: 40 85% 72%;
+    --sunset-400: 40 80% 62%;
+    --sunset-500: 40 75% 52%;
+    --sunset-600: 40 70% 45%;
+    --sunset-700: 40 65% 38%;
+    --sunset-800: 40 60% 30%;
+    --sunset-900: 40 50% 22%;
+  }
+
+  .dark {
+    --background: 220 27% 8%;
+    --foreground: 210 40% 98%;
+
+    --card: 220 23% 11%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 220 23% 11%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 200 100% 50%;
+    --primary-foreground: 220 27% 8%;
+
+    --secondary: 220 23% 15%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 220 23% 15%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 350 89% 70%;
+    --accent-foreground: 220 27% 8%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 23% 18%;
+    --input: 220 23% 18%;
+    --ring: 200 100% 50%;
+
+    /* Dark mode specific colors */
+    --glass-bg: 220 23% 11% / 0.8;
+    --glass-border: 210 40% 98% / 0.1;
+  }
+
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-inter transition-colors duration-300;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-playfair;
+  }
+}
+
+@layer components {
+  /* Glassmorphism Effects */
+  .glass {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .glass-dark {
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  /* Premium Shadows */
+  .shadow-premium {
+    box-shadow: 
+      0 10px 40px -12px rgba(0, 0, 0, 0.25),
+      0 4px 25px -5px rgba(0, 0, 0, 0.1);
+  }
+
+  .shadow-floating {
+    box-shadow: 
+      0 20px 60px -12px rgba(0, 0, 0, 0.25),
+      0 8px 30px -5px rgba(0, 0, 0, 0.1);
+  }
+
+  .shadow-glow {
+    box-shadow: 
+      0 0 40px rgba(var(--accent), 0.3),
+      0 0 20px rgba(var(--accent), 0.2);
+  }
+
+  /* Animation Classes */
+  .animate-fade-up {
+    animation: fadeUp 0.8s ease-out forwards;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.5s ease-out forwards;
+  }
+
+  .animate-pulse-soft {
+    animation: pulseSoft 2s ease-in-out infinite;
+  }
+}
+
+@layer utilities {
+  /* Custom Keyframes */
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes pulseSoft {
+    0%, 100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.05);
+      opacity: 0.9;
+    }
+  }
+
+  html, body {
+    overflow-x: hidden;
+  }
+  
+  /* Responsive Text Sizes */
+  .text-hero {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+
+  .text-section-title {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+  }
+
+  /* Dark mode utilities */
+  .dark .text-blue-100 {
+    @apply text-muted-foreground;
+  }
+}
