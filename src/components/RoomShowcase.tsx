@@ -75,9 +75,9 @@ const rooms: Room[] = [
     id: 1,
     title: "OKATI",
     description: "",
-    images: [r1i5, r1i4, r1i3, r1i2, r1i1],
+    images: [r1i3, r1i4, r1i5, r1i2, r1i1],
     amenities: [
-      "city View",
+      "City View",
       "Outdoor Patio",
       "Queen Bed",
       "Twin Bed",
@@ -149,7 +149,7 @@ const rooms: Room[] = [
     id: 5,
     title: "IEDU",
     description: "",
-    images: [r5i4, r5i3, r5i2, r5i1],
+    images: [r5i3, r5i4, r5i2, r5i1],
     amenities: [
       "Mountain View",
       "Queen Bed",
@@ -167,7 +167,7 @@ const rooms: Room[] = [
     id: 6,
     title: "ARU",
     description: "",
-    images: [r6i5, r6i4, r6i3, r6i2, r6i1],
+    images: [r6i2, r6i4, r6i3, r6i5, r6i1],
     amenities: [
       "Mountain View",
       "Outdoor Balcony",
@@ -186,7 +186,7 @@ const rooms: Room[] = [
     id: 7,
     title: "YEDU",
     description: "",
-    images: [r7i4, r7i3, r7i2, r7i1],
+    images: [r7i2, r7i3, r7i4, r7i1],
     amenities: [
       "Queen Bed",
       "Mountain View",
@@ -204,7 +204,7 @@ const rooms: Room[] = [
     id: 8,
     title: "ENAMIDI",
     description: "",
-    images: [r8i5, r8i4, r8i3, r8i2, r8i1],
+    images: [r8i3, r8i4, r8i5, r8i2, r8i1],
     amenities: [
       "Safe",
       "Mountain View",
