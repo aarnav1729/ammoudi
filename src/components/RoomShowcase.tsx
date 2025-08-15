@@ -17,18 +17,12 @@ import {
   DialogClose,
 } from "@/components/ui/dialog";
 import { ChevronLeft, ChevronRight, Target, X } from "lucide-react";
-import roomCycladic from "@/assets/room-cycladic-suite.jpg";
-import roomAegean from "@/assets/room-aegean-view.jpg";
-import roomParadise from "@/assets/room-paradise-suite.jpg";
-import roomDeluxeSea from "@/assets/room-deluxe-sea.jpg";
-import roomInfinitySuite from "@/assets/room-infinity-suite.jpg";
-import roomStoneVilla from "@/assets/room-stone-villa.jpg";
 
 import r1i1 from "@/assets/Room1/DSC_3805.jpg";
 import r1i2 from "@/assets/Room1/DSC_3808.jpg";
 import r1i3 from "@/assets/Room1/DSC_3811.jpg";
 import r1i4 from "@/assets/Room1/DSC_3820.jpg";
-import r1i5 from "@/assets/Room1/DSC_3832.jpg";   
+import r1i5 from "@/assets/Room1/DSC_3832.jpg";
 
 import r2i1 from "@/assets/Room2/DSC_3847.jpg";
 import r2i2 from "@/assets/Room2/DSC_3850.jpg";
@@ -79,154 +73,150 @@ interface Room {
 const rooms: Room[] = [
   {
     id: 1,
-    title: "Cycladic Suite",
-    description:
-      "Traditional Cycladic architecture meets modern luxury with stunning sea views and private terrace. Experience the authentic charm of Paros while enjoying contemporary amenities.",
+    title: "OKATI",
+    description: "",
     images: [r1i5, r1i4, r1i3, r1i2, r1i1],
     amenities: [
-      "Sea View",
-      "Private Terrace",
-      "King Bed",
-      "Marble Bathroom",
-      "Mini Bar",
+      "city View",
+      "Outdoor Patio",
+      "Queen Bed",
+      "Twin Bed",
+      "Safe",
+      "Air Conditioning",
       "WiFi",
     ],
-    price: "€280",
-    size: "45m²",
-    guests: "2-3",
+    price: "€260",
+    size: "27.5m²",
+    guests: "3",
     featured: true,
   },
   {
     id: 2,
-    title: "Aegean View Room",
-    description:
-      "Elegant room with panoramic Aegean Sea views and contemporary Cycladic design. Perfect for couples seeking a romantic getaway with breathtaking vistas.",
+    title: "RENDU",
+    description: "",
     images: [r2i3, r2i2, r2i1],
     amenities: [
-      "Sea View",
-      "Balcony",
+      "Outdoor Patio",
+      "City View",
       "Queen Bed",
       "Air Conditioning",
       "Safe",
       "WiFi",
     ],
-    price: "€220",
-    size: "35m²",
+    price: "€230",
+    size: "20m²",
     guests: "2",
     featured: false,
   },
   {
     id: 3,
-    title: "Paradise Suite",
-    description:
-      "Our signature suite offering the ultimate luxury experience with infinity pool access. Indulge in unparalleled comfort and exclusive amenities.",
+    title: "MUDU",
+    description: "",
     images: [r3i3, r3i2, r3i1],
     amenities: [
-      "Pool Access",
-      "Sea View",
-      "King Bed",
-      "Living Area",
-      "Jacuzzi",
-      "Butler Service",
+      "Patio",
+      "City View",
+      "Queen Bed",
+      "Air Conditioning",
+      "Safe",
+      "WIFi",
     ],
-    price: "€450",
-    size: "65m²",
-    guests: "2-4",
+    price: "€230",
+    size: "17m²",
+    guests: "2",
     featured: true,
   },
   {
     id: 4,
-    title: "Sunset Terrace Room",
-    description:
-      "Perfect for romantic getaways with west-facing terrace offering spectacular sunsets over the Aegean Sea. Watch the sky transform into a canvas of colors.",
+    title: "NALUGU",
+    description: "",
     images: [r4i3, r4i2, r4i1],
     amenities: [
-      "Sunset View",
-      "Private Terrace",
+      "City View",
+      "Patio",
       "Queen Bed",
-      "Seating Area",
+      "Safe",
+      "Air Conditioning",
       "Mini Bar",
       "WiFi",
     ],
-    price: "€260",
-    size: "40m²",
+    price: "€230",
+    size: "16.5m²",
     guests: "2",
     featured: false,
   },
   {
     id: 5,
-    title: "Ocean Breeze Villa",
-    description:
-      "Spacious villa with panoramic ocean views and private infinity pool. Perfect for families or groups seeking ultimate privacy and luxury.",
+    title: "IEDU",
+    description: "",
     images: [r5i4, r5i3, r5i2, r5i1],
     amenities: [
-      "Private Pool",
-      "Ocean View",
-      "3 Bedrooms",
-      "Kitchen",
-      "Garden",
-      "BBQ Area",
+      "Mountain View",
+      "Queen Bed",
+      "Twin Bed",
+      "Safe",
+      "Air Conditioning",
+      "WIFI",
     ],
-    price: "€650",
-    size: "120m²",
-    guests: "6-8",
+    price: "€250",
+    size: "20m²",
+    guests: "3",
     featured: true,
   },
   {
     id: 6,
-    title: "Garden Retreat",
-    description:
-      "Peaceful retreat surrounded by Mediterranean gardens with mountain views. Ideal for those seeking tranquility and connection with nature.",
+    title: "ARU",
+    description: "",
     images: [r6i5, r6i4, r6i3, r6i2, r6i1],
     amenities: [
-      "Garden View",
       "Mountain View",
-      "Patio",
+      "Outdoor Balcony",
+      "Twin Bed",
       "Queen Bed",
-      "Fireplace",
+      "Air Conditioning",
+      "Safe",
       "WiFi",
     ],
-    price: "€190",
-    size: "30m²",
-    guests: "2",
+    price: "€250",
+    size: "19m²",
+    guests: "3",
     featured: false,
   },
   {
     id: 7,
-    title: "Honeymoon Sanctuary",
-    description:
-      "Romantic sanctuary designed for couples with private jacuzzi and champagne terrace. Experience intimacy and luxury in perfect harmony.",
+    title: "YEDU",
+    description: "",
     images: [r7i4, r7i3, r7i2, r7i1],
     amenities: [
-      "Private Jacuzzi",
-      "Champagne Terrace",
-      "King Bed",
-      "Romantic Lighting",
-      "Butler Service",
-      "Spa Access",
+      "Queen Bed",
+      "Mountain View",
+      "Outdoor Balcony",
+      "Air Conditioning",
+      "Safe",
+      "WIFI",
     ],
-    price: "€380",
-    size: "50m²",
+    price: "€230",
+    size: "15m²",
     guests: "2",
     featured: true,
   },
   {
     id: 8,
-    title: "Traditional Stone House",
-    description:
-      "Authentic Cycladic stone house with modern amenities. Experience traditional island living with all the comforts of contemporary luxury.",
+    title: "ENAMIDI",
+    description: "",
     images: [r8i5, r8i4, r8i3, r8i2, r8i1],
     amenities: [
-      "Stone Architecture",
-      "Traditional Design",
-      "2 Bedrooms",
-      "Kitchen",
-      "Courtyard",
+      "Safe",
+      "Mountain View",
+      "Private Balcony",
+      "Air Conditioning",
+      "Queen Bed",
+      "Twin Bed",
       "WiFi",
     ],
-    price: "€320",
-    size: "75m²",
-    guests: "4",
+    price: "€250",
+    size: "23.5m²",
+    guests: "3",
     featured: false,
   },
 ];
@@ -323,9 +313,7 @@ export const RoomShowcase = () => {
               <DialogTitle className="text-2xl font-playfair text-primary">
                 {openRoom.title}
               </DialogTitle>
-              <DialogClose asChild>
-
-              </DialogClose>
+              <DialogClose asChild></DialogClose>
             </DialogHeader>
             <div className="p-6 pt-0">
               <div className="mb-6">

@@ -1,8 +1,7 @@
 import { useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
-import heroImage from "@/assets/hero-mykonos.jpg";
-import hero from "@/assets/f34791ad-6bc9-437d-89a7-6ae19ddec4b8.jpeg";
+import rhr from "@/assets/img.jpg";
 
 export const HeroSection = () => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -44,7 +43,7 @@ export const HeroSection = () => {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img
-          src={hero}
+          src={rhr}
           alt="Paradise Paros Hotel - Luxury Boutique Experience"
           className="w-full h-full object-cover"
         />
