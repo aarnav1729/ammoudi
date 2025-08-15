@@ -16,7 +16,7 @@ import {
   DialogTitle,
   DialogClose,
 } from "@/components/ui/dialog";
-import { ChevronLeft, ChevronRight, Target, X } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 import r1i1 from "@/assets/Room1/DSC_3805.jpg";
 import r1i2 from "@/assets/Room1/DSC_3808.jpg";
@@ -317,32 +317,35 @@ export const RoomShowcase = () => {
             </DialogHeader>
             <div className="p-6 pt-0">
               <div className="mb-6">
-                {/* Increased height from h-72 to h-96 */}
-                <Carousel className="w-full h-124" loop>
-                  <CarouselContent>
-                    {openRoom.images.map((img, idx) => (
-                      <CarouselItem key={idx} value={idx}>
-                        <img
-                          src={img}
-                          alt={`${openRoom.title} – slide ${idx + 1}`}
-                          className="w-full h-124 object-cover rounded-xl"
-                        />
-                      </CarouselItem>
-                    ))}
-                  </CarouselContent>
-                  <CarouselPrevious
-                    className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 border border-white/30 text-white rounded-full p-2 z-20"
-                    aria-label="Previous image"
-                  >
-                    <ChevronLeft />
-                  </CarouselPrevious>
-                  <CarouselNext
-                    className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 border border-white/30 text-white rounded-full p-2 z-20"
-                    aria-label="Next image"
-                  >
-                    <ChevronRight />
-                  </CarouselNext>
-                </Carousel>
+                {/* Dialog carousel also uses natural image height */}
+                <div className="relative w-full">
+                  <Carousel className="w-full" loop>
+                    <CarouselContent>
+                      {openRoom.images.map((img, idx) => (
+                        <CarouselItem key={idx} className="p-0">
+                          <img
+                            src={img}
+                            alt={`${openRoom.title} – slide ${idx + 1}`}
+                            className="block w-full h-auto object-cover rounded-xl"
+                            loading="lazy"
+                          />
+                        </CarouselItem>
+                      ))}
+                    </CarouselContent>
+                    <CarouselPrevious
+                      className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 border border-white/30 text-white rounded-full p-2 z-20"
+                      aria-label="Previous image"
+                    >
+                      <ChevronLeft />
+                    </CarouselPrevious>
+                    <CarouselNext
+                      className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 border border-white/30 text-white rounded-full p-2 z-20"
+                      aria-label="Next image"
+                    >
+                      <ChevronRight />
+                    </CarouselNext>
+                  </Carousel>
+                </div>
               </div>
               <div className="mb-4">
                 <p className="text-muted-foreground text-base leading-relaxed">
@@ -395,49 +398,46 @@ function RoomCard({
   addToRefs: (el: HTMLDivElement | null) => void;
   onViewDetails: () => void;
 }) {
-  const [slideIndex, setSlideIndex] = useState<number>(0);
-
   return (
     <Card
       ref={addToRefs}
       className="group transform transition-transform duration-300 opacity-0 cursor-pointer bg-card/50 dark:bg-card/80 backdrop-blur-xl border border-border/50 hover:scale-105 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/10 overflow-hidden"
     >
       <CardContent className="p-0">
-        <div className="relative h-80 lg:h-96 overflow-hidden">
-          <Carousel
-            className="w-full h-full"
-            loop
-            value={slideIndex}
-            onValueChange={setSlideIndex}
-          >
+        {/* Image area: full-width, natural height */}
+        <div className="relative w-full overflow-hidden rounded-t-xl">
+          <Carousel className="w-full" loop>
             <CarouselContent>
               {room.images.map((img, idx) => (
-                <CarouselItem key={idx} value={idx}>
+                <CarouselItem key={idx} className="p-0">
                   <img
                     src={img}
                     alt={`${room.title} – slide ${idx + 1}`}
-                    className="w-full h-full object-cover"
+                    className="block w-full h-auto object-cover"
+                    loading="lazy"
                   />
                 </CarouselItem>
               ))}
             </CarouselContent>
             <CarouselPrevious
-              className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 border border-white/30 text-white rounded-full p-2 z-20"
+              className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/30 hover:bg-black/50 border border-white/20 text-white rounded-full p-2 z-20"
               aria-label="Previous image"
             >
               <ChevronLeft />
             </CarouselPrevious>
             <CarouselNext
-              className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 border border-white/30 text-white rounded-full p-2 z-20"
+              className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/30 hover:bg-black/50 border border-white/20 text-white rounded-full p-2 z-20"
               aria-label="Next image"
             >
               <ChevronRight />
             </CarouselNext>
+
+            {/* Gradient overlay (optional) */}
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
           </Carousel>
 
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-
-          <div className="absolute top-6 left-6 flex flex-wrap gap-2 z-20">
+          {/* Badges on image */}
+          <div className="absolute top-4 left-4 flex flex-wrap gap-2 z-20">
             {room.featured && (
               <Badge className="bg-accent text-white px-3 py-1 shadow-lg">
                 Featured
@@ -448,8 +448,9 @@ function RoomCard({
             </Badge>
           </div>
 
-          <div className="absolute bottom-6 right-6 opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0 z-20">
-            <div className="flex gap-4 text-white">
+          {/* Size/Guests pill bottom-right on hover */}
+          <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20">
+            <div className="flex gap-3 text-white">
               <div className="bg-black/70 backdrop-blur-sm rounded-lg px-3 py-2 text-sm">
                 <div className="font-semibold">{room.size}</div>
                 <div className="opacity-80">Size</div>
@@ -462,6 +463,7 @@ function RoomCard({
           </div>
         </div>
 
+        {/* Text content below image */}
         <div className="p-8">
           <h3 className="text-2xl lg:text-3xl font-playfair font-bold text-primary mb-4">
             {room.title}
