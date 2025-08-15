@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
 import heroImage from "@/assets/hero-mykonos.jpg";
-import hero from "@/assets/hero.jpg";
+import hero from "@/assets/f34791ad-6bc9-437d-89a7-6ae19ddec4b8.jpeg";
 
 export const HeroSection = () => {
   const heroRef = useRef<HTMLDivElement>(null);
